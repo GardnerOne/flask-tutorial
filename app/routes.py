@@ -6,6 +6,17 @@ from app import app
 @app.route('/')
 @app.route('/index')
 def index():
-    # return a full html page
+    # The following variables mock objects that haven't been created yet
     user = {'username': 'Jamie'}
-    return render_template('index.html', title='Home', user=user)
+    posts = [
+        {
+            'author': {'username': 'John'},
+            'body': 'Beautiful day in Ballymena. ☀️'
+        },
+        {
+            'author': {'username': 'Susan'},
+            'body': 'The Avengers movie was so cool!'
+        }
+    ]
+
+    return render_template('index.html', title='Home', user=user, posts=posts)
