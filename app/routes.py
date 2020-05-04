@@ -1,3 +1,4 @@
+from flask import render_template
 from app import app
 
 # The following lines are "decorators" which modify the following function
@@ -5,5 +6,6 @@ from app import app
 @app.route('/')
 @app.route('/index')
 def index():
-    # Simple view function that returns a greeting as a string
-    return "Hello world!"
+    # return a full html page
+    user = {'username': 'Jamie'}
+    return render_template('index.html', title='Home', user=user)

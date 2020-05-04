@@ -1,0 +1,20 @@
+<!-- 
+Presentation of the site can be offloaded to templates, such as this.
+These templates are rendered with the Jinja2 template engine.
+
+- Dynamic content sections are marked with double curly braces
+- Control statements are marked with curly brackets and %
+-->
+
+<html>
+    <head>
+        {% if title %}
+        <title>{{title}} - GardnerOne</title>
+        {% else %}
+        <title>GardnerOne</title>
+        {% end if %}
+    </head>
+    <body>
+        <h1>Hello, {{user.username}}!<h1>
+    </body>
+</html>
