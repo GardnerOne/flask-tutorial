@@ -15,7 +15,10 @@ These templates are rendered with the Jinja2 template engine.
         {% endif %}
     </head>
     <body>
-        <div>GardnerOne: <a href="/index">Home</a></div>
+        <div>GardnerOne: 
+            <a href="/index">Home</a>
+            <a href="/login">Log in</a>
+        </div>
         <hr>
         {% block content %}{% endblock %}
     </body>

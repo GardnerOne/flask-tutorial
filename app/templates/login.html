@@ -4,15 +4,18 @@
 {% block content %}
 
 <h1>Sign In</h1>
+<!-- This template expects a form object instantiated from the LoginForm class, which will be sent by the login view function. -->
+<!-- The empty action tells the browser to submit the form to the url currently addressed. novalidate will leave validation as server-side -->
 <form action="" method="POST" novalidate>
+    <!-- Protect against CSRF attacks. All that's required is this field and the SECRET_KEY vairable in the Flask config -->
     {{ form.hidden_tag() }}
     <p>
         {{ form.username.label }}<br />
-        {{ form.username(size(32)) }}
+        {{ form.username(size=32) }}
     </p>
     <p>
         {{ form.password.label }}<br />
-        {{ form.password(size(32)) }}
+        {{ form.password(size=32) }}
     </p>
     <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
     <p>{{ form.submit }}</p>
