@@ -20,6 +20,17 @@ These templates are rendered with the Jinja2 template engine.
             <a href="/login">Log in</a>
         </div>
         <hr>
+        <!-- Flash messages (messages will be popped from the list once viewed, thus only appearing once) -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
         {% block content %}{% endblock %}
     </body>
 </html>
